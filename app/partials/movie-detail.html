@@ -1,0 +1,10 @@
+<h1>{{item.name}}</h1>
+<p>{{item.description}}</p>
+<ul class="specs">
+  <li>
+     <dl>
+      <dt>Actors</dt>
+      <dd ng-repeat="availability in item.availability">{{availability}}</dd>
+    </dl>
+  </li>
+</ul>

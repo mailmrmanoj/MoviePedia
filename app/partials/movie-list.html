@@ -1,0 +1,33 @@
+<div class="col-md-4"></div>
+<form role="form">
+    <div class="row">
+    <div class="form-group col-md-3">
+        <label>Search Title</label>
+        <input  type="text" class="form-control" ng-model="query" placeholder="Enter title..">
+    </div>
+    <div class="form-group col-md-3">
+        <label>Sort By:</label>
+        <select ng-model="orderByReleaseYear" class="form-control">
+            <option value="Title">Title</option>
+            <option value="imdbRating">ImDb Rating</option>
+        </select>
+    </div>
+    </div>
+ </form>
+<div class="col-md-4 "></div>
+<div class="col-md-10">
+    <!--Body content-->
+    <ul class="movies">
+        <li ng-repeat="item in movies | filter:query | orderBy:orderByReleaseYear"
+            class="thumbnail ">
+            <a href="#/movies/{{item.id}}" class="thumb"><img ng-src="{{item.imageUrl}}"></a>
+            <a href="#/movies/{{item.id}}">{{item.Title}}</a>
+            <p>{{item.snippet}}</p>
+            <p> {{item.imdbRating}} out of
+            {{item.max}}
+        <div star-rating rating-value="item.imdbRating" max="item.max" ></div>
+        </li>
+    </ul>
+</div>
+
+
