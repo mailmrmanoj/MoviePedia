@@ -26,7 +26,7 @@ npm install
 ```
 
 This will also run bower, which will download the angular files needed for the current step of the
-tutorial.
+tutorial.Make sure bower-components remain inside the app folder
 
 Most of the scripts described below will run this automatically but it doesn't do any harm to run
 it whenever you like.
